@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://g882l7cwob06"]
+
+[ext_resource type="Texture2D" uid="uid://bm0q3qb7gmt3j" path="res://art/loading.png" id="1_ep5rh"]
+[ext_resource type="Script" uid="uid://m1mjgdxo3f64" path="res://scripts/loading_screen.gd" id="1_hprjd"]
+
+[node name="LoadingScreen" type="Control" unique_id=1975770444]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hprjd")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1417338844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ep5rh")
+expand_mode = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=2042055905]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 24.0
+offset_right = 343.0
+offset_bottom = 139.0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="LoadingBar" type="ProgressBar" parent="." unique_id=101022962]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 700.0
+offset_right = 1385.0
+offset_bottom = 742.0
+
+[node name="LoadTimer" type="Timer" parent="." unique_id=965154282]
+wait_time = 0.05
+autostart = true

@@ -1,0 +1,423 @@
+[gd_scene format=3 uid="uid://docbl8lrshkvs"]
+
+[ext_resource type="Texture2D" uid="uid://dvq5kxxqai1er" path="res://art/mapv2.png" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://mlnaer07hfcy" path="res://art/environmental props/1st House.png" id="2_kvuet"]
+[ext_resource type="Texture2D" uid="uid://bbqxs08hcyt3t" path="res://art/environmental props/2nd House.png" id="3_trtic"]
+[ext_resource type="Texture2D" uid="uid://ddp3mj87bvdkn" path="res://art/environmental props/3rd House.png" id="4_ir15t"]
+[ext_resource type="Texture2D" uid="uid://xdwj6plgsb5c" path="res://art/environmental props/shop.png" id="5_ca42v"]
+[ext_resource type="Texture2D" uid="uid://dk48dbqb7iyap" path="res://art/environmental props/cone1.png" id="6_rysoc"]
+[ext_resource type="Texture2D" uid="uid://cvfixslj0ckik" path="res://art/environmental props/cone3.png" id="7_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://chl7b0skg2g17" path="res://art/environmental props/Mailbox.png" id="8_264po"]
+[ext_resource type="Texture2D" uid="uid://dveiw4padq1a2" path="res://art/environmental props/Car1.png" id="9_1kice"]
+[ext_resource type="Texture2D" uid="uid://dkbw2dh8ixyxr" path="res://art/environmental props/tree1.png" id="10_5newe"]
+[ext_resource type="Texture2D" uid="uid://dce2yo47kl8qa" path="res://art/environmental props/tree2.png" id="11_37s47"]
+[ext_resource type="Texture2D" uid="uid://dna1phcy7lxd7" path="res://art/environmental props/tree3.png" id="12_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://bxg6g8gddv3l5" path="res://art/environmental props/lamp post.png" id="13_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://bu02xpdohb5i" path="res://art/HUD/delivery box frame.png" id="14_trtic"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vjhb"]
+bg_color = Color(0.2901961, 0.6, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w20yl"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Game" type="Node2D" unique_id=501333407]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320653001]
+position = Vector2(-7, -3)
+scale = Vector2(2.1023965, 1.8912282)
+texture = ExtResource("1_uwrxv")
+centered = false
+
+[node name="EnvironmentProps" type="Node2D" parent="." unique_id=1703278456]
+
+[node name="house1" type="Sprite2D" parent="EnvironmentProps" unique_id=1290379999]
+position = Vector2(1437.5, 344)
+scale = Vector2(0.60142857, 0.5287206)
+texture = ExtResource("2_kvuet")
+
+[node name="house2" type="Sprite2D" parent="EnvironmentProps" unique_id=256866976]
+position = Vector2(474.8393, 677.00006)
+scale = Vector2(0.7993572, 0.61936027)
+texture = ExtResource("3_trtic")
+
+[node name="house3" type="Sprite2D" parent="EnvironmentProps" unique_id=830404995]
+position = Vector2(1461.4557, 741.2463)
+rotation = 1.5663809
+scale = Vector2(0.5534747, 0.5541102)
+texture = ExtResource("4_ir15t")
+
+[node name="shop" type="Sprite2D" parent="EnvironmentProps" unique_id=1015898996]
+position = Vector2(956.27386, 547.00214)
+rotation = 3.1386876
+scale = Vector2(0.39493862, 0.39746535)
+texture = ExtResource("5_ca42v")
+
+[node name="cone1" type="Sprite2D" parent="EnvironmentProps" unique_id=222808780]
+position = Vector2(919.3003, 1016.60046)
+rotation = 3.1386876
+scale = Vector2(0.05740839, 0.054772753)
+texture = ExtResource("6_rysoc")
+
+[node name="cone2" type="Sprite2D" parent="EnvironmentProps" unique_id=1724686371]
+position = Vector2(937.9999, 1015.99994)
+rotation = 3.1386876
+scale = Vector2(0.05740839, 0.054772753)
+texture = ExtResource("6_rysoc")
+
+[node name="cone3" type="Sprite2D" parent="EnvironmentProps" unique_id=1117345457]
+position = Vector2(957.00006, 1016.00006)
+rotation = 3.1386876
+scale = Vector2(0.05740839, 0.054772753)
+texture = ExtResource("6_rysoc")
+
+[node name="cone4" type="Sprite2D" parent="EnvironmentProps" unique_id=1611302181]
+position = Vector2(975, 1016.00006)
+rotation = 3.1386876
+scale = Vector2(0.05740839, 0.054772753)
+texture = ExtResource("6_rysoc")
+
+[node name="cone5" type="Sprite2D" parent="EnvironmentProps" unique_id=989511839]
+position = Vector2(996.494, 1015.229)
+rotation = 3.1386876
+scale = Vector2(0.045975655, 0.05084158)
+texture = ExtResource("7_ssvqc")
+
+[node name="mailbox" type="Sprite2D" parent="EnvironmentProps" unique_id=264653602]
+position = Vector2(1376.7808, 839.51624)
+rotation = 0.0039098263
+scale = Vector2(0.26274878, 0.2840922)
+texture = ExtResource("8_264po")
+
+[node name="mailbox2" type="Sprite2D" parent="EnvironmentProps" unique_id=1872206695]
+position = Vector2(503.26514, 837.3495)
+rotation = 0.0039098263
+scale = Vector2(0.26174322, 0.2811655)
+texture = ExtResource("8_264po")
+
+[node name="mailbox3" type="Sprite2D" parent="EnvironmentProps" unique_id=1224792029]
+position = Vector2(1617.0001, 288)
+rotation = 0.0012312655
+scale = Vector2(0.26174322, 0.2811655)
+texture = ExtResource("8_264po")
+
+[node name="car1" type="Sprite2D" parent="EnvironmentProps" unique_id=920693593]
+position = Vector2(1357, 465.00003)
+rotation = -1.5779111
+scale = Vector2(0.17985183, 0.20697053)
+texture = ExtResource("9_1kice")
+
+[node name="car2" type="Sprite2D" parent="EnvironmentProps" unique_id=367749125]
+position = Vector2(971, 686.00006)
+rotation = -1.5779111
+scale = Vector2(0.18609418, 0.22198038)
+
+[node name="trees" type="Sprite2D" parent="EnvironmentProps" unique_id=875043093]
+position = Vector2(577.00006, 223)
+scale = Vector2(0.274, 0.29545453)
+texture = ExtResource("10_5newe")
+
+[node name="trees2" type="Sprite2D" parent="EnvironmentProps" unique_id=1085060462]
+position = Vector2(1293, 298)
+scale = Vector2(0.274, 0.29545453)
+texture = ExtResource("11_37s47")
+
+[node name="trees4" type="Sprite2D" parent="EnvironmentProps" unique_id=1893966487]
+position = Vector2(82.00012, 1003)
+scale = Vector2(0.274, 0.29545453)
+texture = ExtResource("11_37s47")
+
+[node name="trees6" type="Sprite2D" parent="EnvironmentProps" unique_id=1379544934]
+position = Vector2(182, 219)
+scale = Vector2(0.274, 0.29545453)
+texture = ExtResource("11_37s47")
+
+[node name="trees7" type="Sprite2D" parent="EnvironmentProps" unique_id=179858358]
+position = Vector2(1077.0001, 835.99994)
+scale = Vector2(0.079000026, 0.09178325)
+texture = ExtResource("11_37s47")
+
+[node name="trees3" type="Sprite2D" parent="EnvironmentProps" unique_id=2069058039]
+position = Vector2(393.00003, 512)
+scale = Vector2(0.2109998, 0.24562941)
+texture = ExtResource("12_bt5mj")
+
+[node name="trees8" type="Sprite2D" parent="EnvironmentProps" unique_id=543059424]
+position = Vector2(1870.9999, 104)
+scale = Vector2(0.2109998, 0.24562941)
+texture = ExtResource("12_bt5mj")
+
+[node name="trees5" type="Sprite2D" parent="EnvironmentProps" unique_id=2079134809]
+position = Vector2(1881.9999, 841)
+scale = Vector2(0.2109998, 0.24562941)
+texture = ExtResource("12_bt5mj")
+
+[node name="lamp post" type="Sprite2D" parent="EnvironmentProps" unique_id=1579968313]
+position = Vector2(655.00006, 449)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post2" type="Sprite2D" parent="EnvironmentProps" unique_id=404405070]
+position = Vector2(873.00006, 791)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post7" type="Sprite2D" parent="EnvironmentProps" unique_id=613025316]
+position = Vector2(1041.0001, 791.00006)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post18" type="Sprite2D" parent="EnvironmentProps" unique_id=1354702670]
+position = Vector2(1041.0001, 862.0001)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post8" type="Sprite2D" parent="EnvironmentProps" unique_id=632761047]
+position = Vector2(1091, 638.99994)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post9" type="Sprite2D" parent="EnvironmentProps" unique_id=1429144898]
+position = Vector2(1094.0001, 454)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post10" type="Sprite2D" parent="EnvironmentProps" unique_id=33766539]
+position = Vector2(824.0001, 449.99997)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post11" type="Sprite2D" parent="EnvironmentProps" unique_id=1370348252]
+position = Vector2(820, 639)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post12" type="Sprite2D" parent="EnvironmentProps" unique_id=657948771]
+position = Vector2(1047, 213.99994)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post13" type="Sprite2D" parent="EnvironmentProps" unique_id=496062412]
+position = Vector2(278, 452)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post14" type="Sprite2D" parent="EnvironmentProps" unique_id=1791215287]
+position = Vector2(512, 873)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post15" type="Sprite2D" parent="EnvironmentProps" unique_id=1705782166]
+position = Vector2(705, 873)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post16" type="Sprite2D" parent="EnvironmentProps" unique_id=665640186]
+position = Vector2(822, 301.00006)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post17" type="Sprite2D" parent="EnvironmentProps" unique_id=1863760323]
+position = Vector2(867, 212)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post3" type="Sprite2D" parent="EnvironmentProps" unique_id=1374207247]
+position = Vector2(876, 863)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post4" type="Sprite2D" parent="EnvironmentProps" unique_id=2084618153]
+position = Vector2(1642, 655.9999)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post5" type="Sprite2D" parent="EnvironmentProps" unique_id=1176888029]
+position = Vector2(1648.0001, 485)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="lamp post6" type="Sprite2D" parent="EnvironmentProps" unique_id=630911216]
+position = Vector2(1646.0001, 214)
+rotation = 0.004500985
+scale = Vector2(0.05060121, 0.07059292)
+texture = ExtResource("13_e1j6l")
+
+[node name="WorldCollisions" type="StaticBody2D" parent="." unique_id=1874802439]
+
+[node name="house1" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=159709426]
+position = Vector2(342, 752)
+polygon = PackedVector2Array(-5, -8, 3, -200, 267, -203, 263, -59, 150, -62, 151, 13, -1, 15)
+
+[node name="house2" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1521322415]
+position = Vector2(1365, 238)
+polygon = PackedVector2Array(0, -5, -2, 177, 152, 175, 148, 1)
+
+[node name="house3" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1931409261]
+position = Vector2(1535, 671)
+polygon = PackedVector2Array(-1, -3, -153, -1, -153, 130, -1, 138, 40, 68)
+
+[node name="shop" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1217262066]
+position = Vector2(851, 487)
+polygon = PackedVector2Array(8, 1, 209, -6, 209, 138, -3, 138)
+
+[node name="pond" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=44128277]
+position = Vector2(1910, 909)
+polygon = PackedVector2Array(-9, 5, -84, 20, -149, 85, -192, 110, -320, 132, -365, 160, 1, 155)
+
+[node name="cones" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1533042579]
+position = Vector2(907, 1010)
+polygon = PackedVector2Array(-5, -1, 100, 1, 106, 27, -3, 20)
+
+[node name="pedxing" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=330643914]
+position = Vector2(812, 199)
+polygon = PackedVector2Array(-1, -7, 79, -7, 77, 113, -7, 126)
+
+[node name="trees" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1136352712]
+position = Vector2(156, 154)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="trees2" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=509592078]
+position = Vector2(553, 169)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="trees3" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1372722879]
+position = Vector2(54, 954)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="trees4" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1599570662]
+position = Vector2(1272, 236)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="trees5" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=220344061]
+position = Vector2(1844, 47)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="trees6" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1246074617]
+position = Vector2(1855, 778)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="trees7" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1451148959]
+position = Vector2(361, 450)
+polygon = PackedVector2Array(0, -7, 62, 23, 68, 81, 21, 111, -22, 64, -20, 4)
+
+[node name="parkedcar" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=497572652]
+position = Vector2(1318, 427)
+polygon = PackedVector2Array(4, 1, 72, 1, 75, 89, -5, 87)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1875422694]
+position = Vector2(270, 440)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1242018699]
+position = Vector2(645, 436)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1035404240]
+position = Vector2(814, 440)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=2107229436]
+position = Vector2(809, 628)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=123495091]
+position = Vector2(504, 862)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=140393251]
+position = Vector2(688, 858)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1248457268]
+position = Vector2(872, 851)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=495950662]
+position = Vector2(867, 775)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=641529162]
+position = Vector2(1032, 784)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=203378177]
+position = Vector2(1032, 844)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1284704116]
+position = Vector2(1083, 626)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=349039144]
+position = Vector2(1079, 436)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=375260458]
+position = Vector2(1643, 474)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=1905558318]
+position = Vector2(1635, 204)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=10539694]
+position = Vector2(1039, 198)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="WorldCollisions" unique_id=42501917]
+position = Vector2(1631, 639)
+polygon = PackedVector2Array(1, -2, 20, 8, 12, 26, 1, 16, 6, 3)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1753498269]
+
+[node name="SpeedMeter" type="ProgressBar" parent="HUD" unique_id=1409955394]
+offset_left = 28.0
+offset_top = 1014.0
+offset_right = 473.0
+offset_bottom = 1057.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6vjhb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w20yl")
+value = 100.0
+show_percentage = false
+
+[node name="BoxCountFrame" type="TextureRect" parent="HUD" unique_id=1859350684]
+offset_left = 52.0
+offset_top = 39.0
+offset_right = 302.0
+offset_bottom = 144.0
+texture = ExtResource("14_trtic")
+
+[node name="BoxCountText" type="Label" parent="HUD/BoxCountFrame" unique_id=226768071]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 40
+text = "0/3"
+
+[node name="TimerFrame" type="TextureRect" parent="HUD" unique_id=2081088866]
+offset_right = 40.0
+offset_bottom = 40.0

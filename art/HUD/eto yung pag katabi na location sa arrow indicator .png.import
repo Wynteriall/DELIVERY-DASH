@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm0q3qb7gmt3j"
-path="res://.godot/imported/loading.png-10b6cb5dd686e9bfba85d6e0eaa9ca8e.ctex"
+uid="uid://c0ppai38tejek"
+path="res://.godot/imported/eto yung pag katabi na location sa arrow indicator .png-34936ea4a2ff4d7568a56e0a3f5eb839.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://loading.png"
-dest_files=["res://.godot/imported/loading.png-10b6cb5dd686e9bfba85d6e0eaa9ca8e.ctex"]
+source_file="res://art/HUD/eto yung pag katabi na location sa arrow indicator .png"
+dest_files=["res://.godot/imported/eto yung pag katabi na location sa arrow indicator .png-34936ea4a2ff4d7568a56e0a3f5eb839.ctex"]
 
 [params]
 
