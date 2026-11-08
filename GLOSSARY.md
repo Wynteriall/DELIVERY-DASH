@@ -16,6 +16,8 @@ Domain terms used across the project. Devoid of implementation details.
 
 **Phone** — In-game UI through which orders arrive (notification badge) and are accepted (order card with Accept/Decline).
 
+**Loading screen** — Cosmetic transition screen between menu and intro; fake progress bar, placeholder for real asset loading.
+
 **Package** — Item picked up at the shop and tossed at the house door.
 
 **Shop** — The single pickup location for all orders.

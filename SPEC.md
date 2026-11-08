@@ -2,12 +2,12 @@
 
 ## 1. Project
 - **Engine:** Godot 4.7
-- **Resolution:** 640×360, stretch mode `canvas_items`, aspect `expand`
+- **Resolution:** 1920×1080, stretch mode `viewport` (see ADR 0005)
 - **Entry point:** `main_menu.tscn` (set as main scene in `project.godot`)
 - **Art:** 32×32 characters, 16×16 tiles, 24-color palette + transparency, top-left light source, all original PNG sprite sheets (Piskel/Photopea)
 
 ## 2. Architecture
-**`Game.gd` autoload (singleton state manager)** owns all persistent state and drives scene swaps via `change_scene_to_file()`:
+**`Game.gd` autoload (singleton state manager)** owns all persistent state and drives scene swaps via `change_scene_to_file()`; screens navigate through `Game.goto_scene()` (ADR 0001).
 - `stars` (int, starts at 3)
 - `current_order` (Order object or null)
 - `order_timer` (float, seconds remaining)
@@ -17,9 +17,10 @@
 - Settings: Master/Music/SFX sliders saved via `ConfigFile` to `user://settings.cfg`
 
 **Scenes:**
-- `main_menu.tscn` — Start, Settings, Credits (Data Policy removed)
-- `intro.tscn` — dialogue box → sprite swap → player control
-- `game.tscn` — gameplay level
+- `scenes/main_menu.tscn` — Start, Settings, Credits, Exit
+- `scenes/loading_screen.tscn` — cosmetic fake-loading bar → Intro (ADR 0006)
+- `scenes/intro.tscn` — dialogue box → portrait → player control
+- `scenes/game.tscn` — gameplay level
 - `win.tscn` — "Rider of the Day" end screen
 - `fired.tscn` — "You're Fired" end screen
 
@@ -41,17 +42,20 @@
 
 ### Main Menu
 - Background: Canva main menu image (buttons baked in)
-- **Invisible click areas** over the Canva buttons (coordinates TBD from image)
-- Buttons: Start, Settings, Credits
-- Start opens "Ready to ride?" pop-up with a Play button → loads Intro
+- Buttons: Start, Settings, Credits, Exit (Exit added for desktop builds)
+- Start goes straight to the Loading screen (the "Ready to ride?" pop-up was cut, ADR 0006)
 - Settings opens panel with Master/Music/SFX sliders (persist between runs)
 - Credits lists 4 team members + roles (placeholders)
 
 ### Intro
-- **Full dialogue box:** typewriter effect, speaker name, portrait, Skip button
-- Advance with click, E, or Space
-- Courier on foot (idle frame) beside the bike
-- After dialogue, sprite swaps to courier-on-bike; player gains control
+- **Full dialogue box:** typewriter effect, speaker name, portrait (boss sprite), Skip button
+- Advance with click, E, or Space (ESC does **not** skip — reserved for the pause menu)
+- Courier + bike idle art (courier-on-foot sprite swap onto bike is part of the rider ticket)
+- After dialogue, player control begins
+
+### Loading Screen
+- Cosmetic background: art/loading.png, fake progress bar (timer-driven), Back button
+- Placeholder for real resource loading later
 
 ### Game
 - Camera2D follows the rider
@@ -80,7 +84,7 @@
 | # | Decision | Status |
 |---|----------|--------|
 | D1 | Win condition / star rating on win screen | Undecided — defer to playtests |
-| D2 | Main menu invisible click-zone coordinates | Need from Canva image |
+| D2 | Main menu click areas | **Resolved** — collaborator shipped real visible buttons over the Canva image; no invisible zones needed |
 | D3 | Exact order time values | Placeholders (60/50/45 s); tune in playtests |
 
 ## 6. Removed (per ADR 0004)
