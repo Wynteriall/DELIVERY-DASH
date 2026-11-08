@@ -11,42 +11,58 @@ var dialogue = [
 ]
 
 var current_line = 0
+var _typing: Tween = null
+
+# Seconds per character for the typewriter effect
+const TYPE_SPEED := 0.03
 
 # Node References
 @onready var name_label = $NameLabel
 @onready var text_label = $TextLabel
 @onready var skip_button = $SkipButton
-@onready var press_space_label = $PressSpaceLabel # <-- NEW LABEL ADDED HERE
-
+@onready var press_space_label = $PressSpaceLabel
 
 func _ready():
 	skip_button.pressed.connect(_on_skip_pressed)
 	update_dialogue()
 
 func _input(event):
-	# 1. Listen for the Escape key (ui_cancel) to skip the whole scene
-	if event.is_action_pressed("ui_cancel"):
+	# Advance with click, E (interact), or Space (ui_accept). ESC is reserved for pause.
+	var advance := false
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		advance = true
+	elif event.is_action_pressed("interact") or event.is_action_pressed("ui_accept"):
+		advance = true
+	if not advance:
+		return
+
+	# First press while typing completes the line; the next one advances
+	if _typing and _typing.is_running():
+		_typing.kill()
+		_typing = null
+		text_label.visible_ratio = 1.0
+		return
+
+	current_line += 1
+	if current_line < dialogue.size():
+		update_dialogue()
+	else:
 		start_game()
-		
-	# 2. Listen for the Spacebar (ui_accept) to advance dialogue
-	if event.is_action_pressed("ui_accept"):
-		current_line += 1
-		
-		# If there is more dialogue, load the next line
-		if current_line < dialogue.size():
-			update_dialogue()
-		else:
-			# If dialogue is over, go to the game scene
-			start_game()
 
 func update_dialogue():
 	var speaker_name = dialogue[current_line][0]
 	var speaker_text = dialogue[current_line][1]
-	
+
 	name_label.text = speaker_name
+
+	# Typewriter effect
 	text_label.text = speaker_text
-	
-		
+	text_label.visible_ratio = 0.0
+	if _typing:
+		_typing.kill()
+	_typing = create_tween()
+	_typing.tween_property(text_label, "visible_ratio", 1.0, speaker_text.length() * TYPE_SPEED)
+
 	# Change the indicator text when the player reaches the final line
 	if current_line == dialogue.size() - 1:
 		press_space_label.text = "PRESS SPACE TO START"
@@ -58,4 +74,4 @@ func _on_skip_pressed():
 
 func start_game():
 	# Assumes your main game scene is saved as game.tscn
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Game.goto_scene("res://scenes/game.tscn")

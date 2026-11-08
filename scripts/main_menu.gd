@@ -3,7 +3,6 @@ extends Control
 # -- UI Node References --
 @onready var settings_panel = $SettingsPanel
 @onready var credits_panel = $CreditsPanel
-
 # -- Back Buttons --
 @onready var settings_back_btn = $SettingsPanel/SettingsBackButton
 @onready var credits_back_btn = $CreditsPanel/CreditsBackButton
@@ -21,9 +20,6 @@ extends Control
 @onready var sfx_slider = $SettingsPanel/SfxSlider
 
 # -- Audio Bus Indices --
-var master_bus = AudioServer.get_bus_index("Master")
-var music_bus = AudioServer.get_bus_index("Music")
-var sfx_bus = AudioServer.get_bus_index("SFX")
 
 func _ready():
 	# 1. Connect Main Menu Buttons
@@ -41,15 +37,15 @@ func _ready():
 	music_slider.value_changed.connect(_on_music_value_changed)
 	sfx_slider.value_changed.connect(_on_sfx_value_changed)
 	
-	# 4. Set sliders to match current system volume
-	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
-	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus))
-	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus))
+	# 4. Set sliders from persisted settings (Game autoload)
+	master_slider.value = Game.master_volume
+	music_slider.value = Game.music_volume
+	sfx_slider.value = Game.sfx_volume
 
 # --- BUTTON FUNCTIONS ---
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/loading_screen.tscn")
+	Game.goto_scene("res://scenes/loading_screen.tscn")
 
 func _on_settings_pressed():
 	settings_panel.visible = true
@@ -67,13 +63,13 @@ func _on_credits_back_pressed():
 	credits_panel.visible = false
 
 # --- SLIDER FUNCTIONS ---
-# linear_to_db converts the 0.0-1.0 slider value into decibels for Godot's audio engine
+# linear_to_db conversion happens inside Game.gd; the bus index lookup lives there too.
 
 func _on_master_value_changed(value):
-	AudioServer.set_bus_volume_db(master_bus, linear_to_db(value))
+	Game.set_volume("Master", value)
 
 func _on_music_value_changed(value):
-	AudioServer.set_bus_volume_db(music_bus, linear_to_db(value))
+	Game.set_volume("Music", value)
 
 func _on_sfx_value_changed(value):
-	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(value))
+	Game.set_volume("SFX", value)

@@ -68,7 +68,21 @@ func save_settings() -> void:
 	config.setvalue("settings", "sfx", sfx_volume)
 	config.save("user://settings.cfg")
 
+func set_volume(bus: String, value: float) -> void:
+	match bus:
+		BUS_MASTER:
+			master_volume = value
+		BUS_MUSIC:
+			music_volume = value
+		BUS_SFX:
+			sfx_volume = value
+		_:
+			push_error("Unknown audio bus: %s" % bus)
+			return
+	_apply_audio_volumes()
+	save_settings()
+
 func _apply_audio_volumes() -> void:
-	AudioServer.set_bus_volume(AudioServer.get_bus_index(BUS_MASTER), master_volume)
-	AudioServer.set_bus_volume(AudioServer.get_bus_index(BUS_MUSIC), music_volume)
-	AudioServer.set_bus_volume(AudioServer.get_bus_index(BUS_SFX), sfx_volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(BUS_MASTER), linear_to_db(master_volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(BUS_MUSIC), linear_to_db(music_volume))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(BUS_SFX), linear_to_db(sfx_volume))

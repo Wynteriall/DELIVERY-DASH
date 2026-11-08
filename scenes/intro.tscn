@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8a3dh3ffa6gu"]
 
 [ext_resource type="Texture2D" uid="uid://b0vxbcjx3xvk8" path="res://art/intro.png" id="1_ioskq"]
+[ext_resource type="Texture2D" uid="uid://35vj6pcbgv7r" path="res://art/boss.png" id="2_boss"]
 [ext_resource type="Script" uid="uid://31ypy2hbc8pc" path="res://scripts/intro.gd" id="1_yjqpq"]
 
 [node name="Intro" type="Control" unique_id=733728090]
@@ -31,6 +32,15 @@ offset_bottom = 778.0
 mouse_default_cursor_shape = 2
 text = "Skip to the Game"
 flat = true
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=1618816259]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 700.0
+offset_right = 515.0
+offset_bottom = 900.0
+texture = ExtResource("2_boss")
+expand_mode = 1
 
 [node name="NameLabel" type="Label" parent="." unique_id=1538112229]
 layout_mode = 0

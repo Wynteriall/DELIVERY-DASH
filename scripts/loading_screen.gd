@@ -18,7 +18,7 @@ func _on_back_pressed():
 	# Stop the timer so it doesn't accidentally change scenes in the background
 	load_timer.stop()
 	# Go back to the main menu (Make sure the spelling is exactly as it is in your FileSystem!)
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	Game.goto_scene("res://scenes/main_menu.tscn")
 
 func _on_timer_timeout():
 	# Add 2 to the progress bar every time the timer ticks (every 0.05 seconds)
