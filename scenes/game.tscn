@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dna1phcy7lxd7" path="res://art/environmental props/tree3.png" id="12_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://bxg6g8gddv3l5" path="res://art/environmental props/lamp post.png" id="13_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://bu02xpdohb5i" path="res://art/HUD/delivery box frame.png" id="14_trtic"]
+[ext_resource type="Texture2D" uid="uid://35vj6pcbgv7r" path="res://art/boss.png" id="15_rider"]
+[ext_resource type="Script" path="res://scripts/rider.gd" id="16_ridergd"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="17_gamegd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vjhb"]
 bg_color = Color(0.2901961, 0.6, 0.6, 1)
@@ -25,7 +28,11 @@ border_width_bottom = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w20yl"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rider"]
+size = Vector2(28, 28)
+
 [node name="Game" type="Node2D" unique_id=501333407]
+script = ExtResource("17_gamegd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320653001]
 position = Vector2(-7, -3)
@@ -263,6 +270,25 @@ position = Vector2(1646.0001, 214)
 rotation = 0.004500985
 scale = Vector2(0.05060121, 0.07059292)
 texture = ExtResource("13_e1j6l")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1555000001]
+position = Vector2(960, 650)
+script = ExtResource("16_ridergd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1555000002]
+scale = Vector2(2, 2)
+texture = ExtResource("15_rider")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1555000003]
+shape = SubResource("RectangleShape2D_rider")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1555000004]
+limit_left = 0
+limit_top = 0
+limit_right = 1930
+limit_bottom = 1078
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="WorldCollisions" type="StaticBody2D" parent="." unique_id=1874802439]
 
